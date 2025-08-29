@@ -1,5 +1,11 @@
 export default function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === 'GET') {
+    // Handle GET request - return basic info or operation code
+    res.status(200).json({
+      operation_code: 1
+    });
+  } else if (req.method === 'POST') {
+    // Handle POST request - process data
     const { data } = req.body;
 
     const fullName = "edwin_jose";
